@@ -1,0 +1,638 @@
+
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+}
+
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+body{
+	width:960px;
+	margin:0 auto;
+}
+
+/* header///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.header_title{
+	background:url(../img/mainbg.png);
+	background-size:cover;
+	background-position:center;
+	height:400px;
+	color:white;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header_title h1{
+	font-size:48px;
+}
+
+.header_title h2{
+	font-size:36px;
+}
+
+.header_menu{
+	display:flex;
+	height:80px;
+	border-bottom: 1px solid #efefef;
+}
+
+.header_menu_img{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:40%;
+}
+
+.header_menu_img_png{
+	width:50%;
+}
+
+.header_menu_list{
+	width:60%;
+	font-size:18px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.header_menu_list ul{
+	display: flex;
+	
+}
+ .header_menu_list li{
+	line-height: 80px;
+}
+
+ .header_menu_list a{
+	color:#707070;
+	display:block;
+	width:100px;
+	text-align:center;
+	font-size:14px;
+	transition-duration: 0.5s;
+	transition-property: background;
+}
+
+.header_menu_list a:hover{
+	color:white;
+	background:#ffd61a;
+	font-size: 18px;
+}
+
+/* aboutーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.about_text{
+	padding:120px 0 80px 0;
+	display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_text h3{
+	font-size:24px;
+	color:#ffd61a;
+	padding-bottom:24px;
+}
+
+.about01{
+	padding-bottom:64px;
+}
+
+.about02{
+	padding-bottom:40px;
+}
+
+.about04{
+	padding-bottom:40px;
+}
+
+/* ※ここから画像スライド無限ループ */
+/* グーグル先生からコピペしてサイズ微調整等は出来たものの、本質的部分は理解できていない。。。 */
+
+.about_img {	
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.about_img img {
+  width: auto;
+  height: 100%;
+}
+
+/* 1つ目の画像 */
+.about_img img:first-child {
+  -webkit-animation: loop 50s -25s linear infinite;
+  animation: loop 50s -25s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* 2つ目の画像 */
+.about_img img + img {
+  -webkit-animation: loop2 50s  linear infinite;
+  animation: loop2 50s linear infinite;
+}
+
+/*アニメーション*/
+@-webkit-keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+}
+
+/* courseーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.course_top{
+	display:flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+	padding:64px 0;
+}
+
+.course_top h3{
+	font-size:24px;
+	padding-bottom:24px
+}
+
+.course_contents{
+	display:flex;
+}
+
+.course_contents_textbox_right{
+	width:50%;
+	display:flex;
+    flex-direction: column;
+	justify-content: center;
+	background:whitesmoke;
+}
+
+.course_contents_textbox_left{
+	width:50%;
+	display:flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items:flex-end;
+	background:whitesmoke;
+}
+
+.course_contents_textbox_text{
+	width:90%;
+}
+
+.course_contents_textbox_text h4{
+	font-size:20px;
+	color:#222222;
+	padding-bottom:40px;
+}
+
+.course_contents_textbox_text p{
+	font-size:15px;
+}
+
+.right{
+padding-left:48px;
+}
+
+.left{
+padding-right:48px;
+}
+
+.course_contents_img{
+	width:50%;
+}
+
+.course_contents_img_jpg{
+	width:100%;
+	height:100%;
+	object-fit: cover;
+	transition: 1.0s;
+}
+
+/* newsーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.news_top{
+	padding:64px 0;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.news_top h3{
+	font-size:24px;
+	color:#ffd61a;
+}
+
+.news_contents{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.news_contents_topics{
+	margin:0 15px;
+	width:30%;
+}
+
+.news_contents_topics_text{
+	width:90%;
+	margin:0 auto;
+}
+
+.news_contents_topics_text h4{
+	padding:32px 0 24px 0;
+}
+
+.news_contents_topics_text p{
+	font-size:14px;
+}
+
+.news_contents_topics_img img{
+	width:100%;
+}
+
+.news_btn{
+	margin:56px auto 48px auto;
+	width:300px;
+	height:60px;
+	background:#ffd61a;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	font-size:20px;
+	border-radius: 10px;
+}
+
+.news_btn:hover{
+	opacity:0.7;
+}
+
+/* accessーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.access{
+	background:#fafafa;
+	padding-bottom:56px;
+}
+
+.access_top{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding:64px 0;
+}
+
+.access_top h3{
+	font-size:24px;
+	padding-bottom:24px
+
+}
+
+.access_info{
+	padding-top:64px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.access_info li{
+	font-size:15px;
+	padding-bottom:24px;
+}
+
+.access_info_left{
+	padding-right:48px;
+}
+
+
+
+/* contactーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.contact_top{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding:64px 0;
+}
+
+.contact_top h3{
+	font-size:24px;
+	padding-bottom:24px
+}
+
+.contact_text{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact02{
+	padding-bottom:24px;
+}
+
+.contact04{
+	padding-bottom:80px;
+}
+
+/* formーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+form{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.type1{
+	border:1px solid #bfbfbf;
+	width:328px;
+	height:36px;
+}
+
+.type2{
+	border:1px solid #bfbfbf;
+	width:328px;
+	height:108px;
+}
+
+.checkbox{
+	display:flex;
+	flex-direction: column;
+	margin-bottom:8px;
+}
+
+.checkbox_contents{
+	margin-bottom:24px;
+}
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bfbfbf;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+dt{
+	float:left;
+	width:120px;
+	margin-right:120px;
+}
+
+.name02{
+	margin-top:24px;
+	margin-bottom:24px;
+}
+
+.email{
+	margin-bottom:40px;
+}
+
+.checkbox label{
+		margin-bottom:24px;
+}
+
+.deteal{
+	margin-top:8px;
+	margin-bottom:40px;
+}
+
+.form_btn{
+	margin:0 auto 150px auto;
+	width:300px;
+	height:60px;
+	background:#ffd61a;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	font-size:20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.form_btn:hover{
+	opacity:0.7;
+}
+
+/* footer///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.footer_navi{
+	height:300px;
+	background:#dcdcdc;
+	display:flex;
+}
+
+.footer_navi_img{
+	width:40%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer_navi_img img{
+	width: 280px;
+}
+
+.footer_navi_sns{
+	width:30%;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+	
+}
+
+.footer_navi_sns ul{
+	padding-top:40px;
+}
+
+.footer_navi_sns li{
+	padding-bottom:5px;
+}
+
+.footer_navi_sns a{
+color:white;
+font-size:18px;
+}
+
+.footer_navi_sns p{
+color:white;
+font-size:18px;
+}
+
+.fab{
+	color:white;
+}
+
+.sns_hover_a{
+	margin:30px;
+}
+
+.fab:hover{
+	color:#707070;
+} 
+
+.footer_navi_navi{
+	width:30%;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+.footer_navi_navi ul{
+	padding-top:40px;
+	padding-right:60px;
+}
+
+.footer_navi_navi li{
+	padding-bottom:5px;
+}
+
+.footer_navi_navi a{
+	color:white;
+	font-size:18px;
+	padding-bottom:10px;
+}
+
+.footer_navi_navi a:hover{
+	color:#707070;
+}
+
+.footer_copyrights{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background:#707070;
+}
+
+.footer_copyrights p{
+	font-size:15px;
+	padding:20px 0;
+	color:white;
+}
+
+/* javascript///////////////////////////////////// */
+
+/* .none{
+	display:none;
+} */
+
+.openning{
+	background:url("../img/openning.jpg");
+	background-size:cover;
+	background-position:center;
+	height:600px;
+	color:white;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
